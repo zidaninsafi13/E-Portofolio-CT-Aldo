@@ -41,6 +41,9 @@ export function InfographicPage() {
             <p className="showcase-kicker">Infografis Utama</p>
             <h2>{infographic.title}</h2>
             <p>{infographic.description}</p>
+            {infographic.status === "reference" ? (
+              <p className="reference-notice"><strong>Referensi sementara.</strong> {infographic.notice}</p>
+            ) : null}
 
             <dl className="showcase-meta">
               <div>

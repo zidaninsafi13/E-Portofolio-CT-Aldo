@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { createPortal } from "react-dom";
 
 import { Icon } from "../ui/Icon";
 
@@ -37,7 +38,7 @@ export function ShowcasePreviewModal({
     };
   }, [onClose]);
 
-  return (
+  return createPortal(
     <div
       className="document-preview-backdrop"
       onClick={(event) => {
@@ -80,6 +81,7 @@ export function ShowcasePreviewModal({
           </aside>
         </div>
       </section>
-    </div>
+    </div>,
+    document.body,
   );
 }

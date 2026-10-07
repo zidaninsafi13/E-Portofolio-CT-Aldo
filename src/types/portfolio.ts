@@ -1,5 +1,6 @@
 export type PortfolioProfile = {
   name: string;
+  nim: string;
   program: string;
   status?: string;
   field: string;
@@ -13,6 +14,9 @@ export type PortfolioProfile = {
 };
 
 export type InstitutionKind = "lptk" | "ppl";
+
+export type WorksheetAssignment = "individual" | "group";
+export type DocumentStatus = "current" | "reference";
 
 export type Institution = {
   id: string;
@@ -44,6 +48,9 @@ export type LearningWorksheet = {
   keyPoints?: string[];
   documentUrl?: string;
   documentLabel?: string;
+  assignmentType?: WorksheetAssignment;
+  documentStatus?: DocumentStatus;
+  documentNotice?: string;
 };
 
 export type Infographic = {
@@ -55,6 +62,8 @@ export type Infographic = {
   thumbnail?: string;
   author?: string;
   year?: number;
+  status?: DocumentStatus;
+  notice?: string;
 };
 
 export type FinalReport = {
@@ -66,6 +75,8 @@ export type FinalReport = {
   downloadable?: boolean;
   author?: string;
   year?: number;
+  status?: DocumentStatus;
+  notice?: string;
 };
 
 export type ReflectionSection = {
@@ -73,4 +84,6 @@ export type ReflectionSection = {
   title: string;
   content: string;
   documentUrl?: string;
+  status?: DocumentStatus;
+  notice?: string;
 };

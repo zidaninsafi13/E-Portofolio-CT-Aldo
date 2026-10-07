@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 
 import type { LearningWorksheet } from "../../types/portfolio";
 import { Icon } from "../ui/Icon";
@@ -63,6 +64,13 @@ export function WorksheetContent({ worksheet }: WorksheetContentProps) {
         </div>
       </div>
 
+      <div className="worksheet-badges" aria-label="Status tugas">
+        <span className={`assignment-badge assignment-badge-${worksheet.assignmentType ?? "group"}`}>
+          {worksheet.assignmentType === "individual" ? "Individu" : "Kelompok"}
+        </span>
+        {worksheet.documentStatus === "reference" ? <span className="reference-badge">Referensi sementara</span> : null}
+      </div>
+
       <article className="topic-content-card worksheet-explanation">
         <span className="content-card-icon green" aria-hidden="true">
           <Icon name="book" size={28} />
@@ -116,6 +124,7 @@ export function WorksheetContent({ worksheet }: WorksheetContentProps) {
             <p className="worksheet-summary-label">Dokumen Pendukung</p>
             <h3>{worksheet.documentLabel ?? "Dokumen LK"}</h3>
             <p>Dokumen PDF asli tersedia untuk dibaca atau diunduh sebagai bahan revisi.</p>
+            {worksheet.documentNotice ? <p className="document-notice">{worksheet.documentNotice}</p> : null}
           </div>
           <button className="worksheet-document-action" type="button" onClick={() => setIsDocumentPreviewOpen(true)}>
             <Icon name="expand" size={18} /> Buka PDF
@@ -123,7 +132,7 @@ export function WorksheetContent({ worksheet }: WorksheetContentProps) {
         </article>
       ) : null}
 
-      {isDocumentPreviewOpen && worksheet.documentUrl ? (
+      {isDocumentPreviewOpen && worksheet.documentUrl ? createPortal(
         <div
           className="document-preview-backdrop"
           onClick={(event) => {
@@ -171,7 +180,8 @@ export function WorksheetContent({ worksheet }: WorksheetContentProps) {
               </aside>
             </div>
           </section>
-        </div>
+        </div>,
+        document.body,
       ) : null}
     </section>
   );

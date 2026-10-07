@@ -31,6 +31,9 @@ export function WorksheetTabs({ activeWorksheet, worksheets }: WorksheetTabsProp
             >
               <strong>{worksheet.code}</strong>
               <span>{worksheet.title}</span>
+              <small className={`topic-tab-type topic-tab-type-${worksheet.assignmentType ?? "group"}`}>
+                {worksheet.assignmentType === "individual" ? "Individu" : "Kelompok"}
+              </small>
             </Link>
           );
         })}

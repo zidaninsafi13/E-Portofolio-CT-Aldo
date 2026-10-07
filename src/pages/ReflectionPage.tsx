@@ -34,6 +34,9 @@ export function ReflectionPage() {
                 <p className="reflection-number">0{index + 1}</p>
                 <h2>{reflection.title}</h2>
                 <p>{reflection.content}</p>
+                {reflection.status === "reference" ? (
+                  <p className="reference-notice"><strong>Referensi sementara.</strong> {reflection.notice}</p>
+                ) : null}
                 {reflection.documentUrl ? (
                   <button className="reflection-action" type="button" onClick={() => setActiveReflection(reflection)}>
                     Baca Refleksi <Icon name="arrow-right" size={18} />

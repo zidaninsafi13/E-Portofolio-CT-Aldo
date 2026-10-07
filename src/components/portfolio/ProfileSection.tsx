@@ -2,8 +2,11 @@ import { profile } from "../../data/profile";
 import { Icon } from "../ui/Icon";
 import { SectionHeading } from "../ui/SectionHeading";
 
+const activityPhoto = new URL("../../../assets/profile/profile-2-a.jpeg", import.meta.url).href;
+
 const profileFacts = [
   { label: "Nama", value: profile.name, icon: "person" as const },
+  { label: "NIM", value: profile.nim, icon: "tag" as const },
   { label: "Program", value: profile.program, icon: "graduation" as const },
   { label: "Mata Kuliah", value: profile.course, icon: "book" as const },
   { label: "Tahun", value: String(profile.year), icon: "calendar" as const },
@@ -18,13 +21,13 @@ export function ProfileSection() {
 
   return (
     <section id="profil" className="home-section profile-section" aria-labelledby="profile-title">
-      <SectionHeading eyebrow="Tentang Saya" title="Profil Mahasiswa" titleId="profile-title" aside={profile.sectionNote ?? "[Pernyataan personal akan ditambahkan]"} />
+      <SectionHeading eyebrow="02 / Di balik portofolio" title="Belajar untuk menjadi pendidik." titleId="profile-title" aside="Menghubungkan cara berpikir dengan pengalaman nyata dalam pendidikan jasmani." />
       <div className="profile-grid">
         <div className="profile-photo-placeholder">
           {profile.photo ? (
             <>
-              <img src={profile.photo} alt="Foto profil Zidan Insafi" />
-              <span className="profile-signature" aria-hidden="true">Zidan Insafi</span>
+              <img src={activityPhoto} alt={`Dokumentasi kegiatan pembelajaran ${profile.name}`} loading="lazy" />
+              <span className="profile-signature">Ruang belajar, ruang bertumbuh.</span>
             </>
           ) : (
             <>

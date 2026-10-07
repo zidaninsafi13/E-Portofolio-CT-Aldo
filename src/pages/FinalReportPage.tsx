@@ -47,6 +47,9 @@ export function FinalReportPage() {
             <p className="showcase-kicker">Dokumen Portofolio</p>
             <h2>{finalReport.title}</h2>
             <p>{finalReport.description}</p>
+            {finalReport.status === "reference" ? (
+              <p className="reference-notice"><strong>Referensi sementara.</strong> {finalReport.notice}</p>
+            ) : null}
 
             <dl className="showcase-meta">
               <div>

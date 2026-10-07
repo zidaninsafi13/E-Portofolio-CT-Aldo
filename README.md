@@ -1,6 +1,6 @@
 # E-Portfolio Computational Thinking
 
-Website portofolio akademik Zidan Insafi untuk mendokumentasikan perjalanan belajar Computational Thinking dalam program PPG PJOK.
+Website portofolio akademik Aldona Abdullah Ibrahim untuk mendokumentasikan perjalanan belajar Computational Thinking dalam program PPG PJOK.
 
 ## Menjalankan project
 
@@ -25,3 +25,7 @@ npm run build
 - `public/` — aset publik seperti logo institusi, gambar PPL, dan favicon.
 
 Semua konten akademik diambil dari aset lokal pada folder `tugas/`; tidak ada API eksternal yang diperlukan.
+
+Versi Aldona memuat enam topik dan 18 LK, termasuk empat PDF individu Aldona. Infografis, laporan akhir, dan refleksi lama masih diberi label referensi sementara.
+
+Tampilan menggunakan tema jurnal editorial dengan warna ivory, hijau tua, dan terracotta. Seluruh tampilan aktif diatur di `src/editorial.css`; `styles.css` dan `appearance.css` lama tidak lagi diimpor. Halaman detail menempatkan navigasi LK di samping konten pada desktop dan sebagai daftar geser pada ponsel. Mode gelap dan preferensi reduced-motion didukung.

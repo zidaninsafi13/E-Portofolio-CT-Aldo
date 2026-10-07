@@ -1,0 +1,103 @@
+/* Editorial motion: entrance → reveal → feedback. No scrolling interception. */
+:root {
+  --motion-ease: cubic-bezier(.22, 1, .36, 1);
+  --motion-quick: 220ms;
+  --motion-reveal: 680ms;
+}
+.hero-line { display: block; overflow: clip; padding-bottom: .12em; margin-bottom: -.12em; }
+.hero-line > span, .hero-line > em { display: inline-block; }
+.reading-progress { display: none; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .page-stage { animation: page-arrive 360ms var(--motion-ease) backwards; }
+  .hero-copy > .eyebrow { animation: editorial-rise 650ms 80ms var(--motion-ease) both; }
+  .hero-line > span, .hero-line > em { animation: headline-arrive 950ms var(--motion-ease) both; }
+  .hero-line:nth-child(1) > * { animation-delay: 130ms; }
+  .hero-line:nth-child(2) > * { animation-delay: 260ms; }
+  .hero-line:nth-child(3) > * { animation-delay: 390ms; }
+  .hero-subtitle { animation: editorial-rise 700ms 390ms var(--motion-ease) both; }
+  .hero-description { animation: editorial-rise 700ms 470ms var(--motion-ease) both; }
+  .hero-actions { animation: editorial-rise 700ms 550ms var(--motion-ease) both; }
+  .hero-stats > div { animation: editorial-rise 700ms 630ms var(--motion-ease) both; }
+  .hero-stats > div:nth-child(2) { animation-delay: 710ms; }
+  .hero-stats > div:nth-child(3) { animation-delay: 790ms; }
+  .hero-portrait { animation: portrait-arrive 1100ms 160ms var(--motion-ease) both; }
+  .portrait-label { animation: label-arrive 800ms 700ms var(--motion-ease) both; }
+  .hero-portrait figcaption { animation: editorial-rise 750ms 740ms var(--motion-ease) both; }
+  .topics-intro > div, .final-page-heading, .topic-detail-copy { animation: editorial-rise 700ms 80ms var(--motion-ease) both; }
+  .topics-summary, .final-page-header blockquote, .topic-detail-index { animation: editorial-rise 850ms 200ms var(--motion-ease) both; }
+  .topic-reading { animation: worksheet-arrive 420ms var(--motion-ease) both; }
+  .document-preview-backdrop { animation: page-arrive 180ms ease-out both; }
+  .document-preview-dialog { animation: dialog-arrive 320ms var(--motion-ease) both; }
+  .topic-menu[open] .topic-menu-panel { animation: menu-arrive 260ms var(--motion-ease) both; transform-origin: top center; }
+  .nav-links.is-open { animation: menu-arrive 260ms var(--motion-ease) both; }
+  .site-header { transition: box-shadow 320ms ease; }
+  .site-header.is-scrolled { box-shadow: 0 5px 24px #172e2510; }
+  .button, .showcase-action, .worksheet-document-action, .reflection-action,
+  .topic-tab, .document-preview-close, .nav-toggle {
+    transition: transform var(--motion-quick) var(--motion-ease), background-color var(--motion-quick) ease, border-color var(--motion-quick) ease, box-shadow var(--motion-quick) ease;
+  }
+  .button:active, .showcase-action:active, .worksheet-document-action:active,
+  .reflection-action:active, .document-preview-close:active { transform: scale(.97); }
+  .text-link svg, .button svg, .journey-row > svg, .topic-card-link svg,
+  .institution-action svg, .reflection-action svg, .worksheet-nav svg,
+  .brand-mark-icon, .topic-chevron {
+    transition: transform 320ms var(--motion-ease);
+  }
+  .topic-menu[open] .topic-chevron { transform: rotate(180deg); }
+  .hero-portrait img, .institution-media img, .profile-photo-placeholder img {
+    transition: transform 900ms var(--motion-ease);
+  }
+  .institution-media, .portrait-frame { overflow: clip; }
+  .topic-card, .institution-card, .reflection-card {
+    transition: transform 380ms var(--motion-ease), border-color 250ms ease, box-shadow 380ms var(--motion-ease);
+  }
+  .journey-row { transition: background-color 250ms ease; }
+  .journey-row > div, .journey-number { transition: transform 380ms var(--motion-ease), color 250ms ease; }
+  .nav-link { position: relative; border-bottom-color: transparent; }
+  .nav-link::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: 4px; height: 1px;
+    background: var(--accent); transform: scaleX(0); transform-origin: left;
+    transition: transform 320ms var(--motion-ease);
+  }
+  .nav-link.active, .nav-link:hover { border-bottom-color: transparent; }
+  .nav-link.active::after, .nav-link:hover::after { transform: scaleX(1); }
+  .hero-copy:focus-within .hero-actions { animation: none; }
+  .topic-menu-panel:focus-within, .nav-links.is-open:focus-within { animation: none; }
+
+  @supports (animation-timeline: scroll()) {
+    .reading-progress {
+      display: block; position: absolute; bottom: -1px; left: 0; width: 100%; height: 2px;
+      background: var(--accent); transform-origin: left; pointer-events: none;
+      animation: reading-progress linear both; animation-timeline: scroll(root block);
+    }
+  }
+}
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .button:hover, .showcase-action:hover, .worksheet-document-action:hover, .reflection-action:hover {
+    transform: translateY(-3px); box-shadow: 0 8px 20px #16372716;
+  }
+  .button:hover svg, .topic-card:hover .topic-card-link svg, .institution-action:hover svg,
+  .reflection-action:hover svg { transform: translateX(4px); }
+  .text-link:hover svg { transform: translateY(3px); }
+  .brand-mark:hover .brand-mark-icon { transform: rotate(-8deg); }
+  .journey-row:hover > div { transform: translateX(7px); }
+  .journey-row:hover > svg { transform: translateX(5px); }
+  .journey-row:hover .journey-number { transform: translateY(-2px); color: var(--forest); }
+  .topic-card:hover, .institution-card:hover, .reflection-card:hover {
+    transform: translateY(-5px); border-color: var(--accent); box-shadow: 0 16px 30px #1637270c;
+  }
+  .hero-portrait:hover img { transform: scale(1.035); }
+  .institution-card:hover img, .profile-photo-placeholder:hover img { transform: scale(1.045); }
+  .topic-tab:hover { transform: translateX(3px); }
+  .document-preview-close:hover { transform: rotate(90deg); }
+}
+@keyframes page-arrive { from { opacity: .25; } to { opacity: 1; } }
+@keyframes editorial-rise { from { opacity: 0; translate: 0 18px; } to { opacity: 1; translate: 0 0; } }
+@keyframes headline-arrive { from { opacity: 0; transform: translateY(110%); } to { opacity: 1; transform: translateY(0); } }
+@keyframes portrait-arrive { from { opacity: 0; translate: 0 28px; scale: .975; } to { opacity: 1; translate: 0 0; scale: 1; } }
+@keyframes label-arrive { from { opacity: 0; translate: 0 14px; } to { opacity: 1; translate: 0 0; } }
+@keyframes worksheet-arrive { from { opacity: .25; translate: 0 12px; } to { opacity: 1; translate: 0 0; } }
+@keyframes dialog-arrive { from { opacity: 0; transform: translateY(14px) scale(.985); } to { opacity: 1; transform: none; } }
+@keyframes menu-arrive { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+@keyframes reading-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }

@@ -4,7 +4,6 @@ import { PreviousNextNavigation } from "../components/portfolio/PreviousNextNavi
 import { WorksheetContent } from "../components/portfolio/WorksheetContent";
 import { WorksheetTabs } from "../components/portfolio/WorksheetTabs";
 import { Icon } from "../components/ui/Icon";
-import { profile } from "../data/profile";
 import { topics } from "../data/topics";
 import { NotFoundPage } from "./NotFoundPage";
 
@@ -52,24 +51,13 @@ export function TopicDetailPage() {
             </div>
           </div>
 
-          <div className="topic-detail-visual">
-            {profile.photo ? <img src={profile.photo} alt="Visual sementara pemilik portofolio" /> : null}
-            <p className="topic-detail-slogan">
-              <span>Lebih Sadar</span>
-              <span>Lebih Bergerak</span>
-              <span>Lebih Bermakna</span>
-            </p>
-            <blockquote>
-              <strong aria-hidden="true">“</strong>
-              {profile.quote}
-            </blockquote>
-          </div>
+          <div className="topic-detail-index" aria-hidden="true">{String(topic.number).padStart(2, "0")}<span>CATATAN BELAJAR</span></div>
         </div>
       </div>
 
       <div className="topic-detail-content">
         <WorksheetTabs activeWorksheet={activeWorksheet} worksheets={topic.worksheets} />
-        <WorksheetContent worksheet={activeWorksheet} />
+        <WorksheetContent key={activeWorksheet?.id} worksheet={activeWorksheet} />
         <PreviousNextNavigation activeWorksheet={activeWorksheet} topic={topic} topics={topics} />
       </div>
     </section>

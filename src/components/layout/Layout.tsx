@@ -6,6 +6,7 @@ import { profile } from "../../data/profile";
 import { topics } from "../../data/topics";
 import { Icon } from "../ui/Icon";
 import { ThemeToggle } from "../ui/ThemeToggle";
+import { useEditorialMotion } from "../ui/useEditorialMotion";
 
 const navigationItems = [
   { to: "/", label: "Beranda", end: true },
@@ -28,6 +29,7 @@ export function Layout() {
   const [isScrolled, setIsScrolled] = useState(false);
   const topicMenuRef = useRef<HTMLDetailsElement>(null);
   const location = useLocation();
+  const motionScope = useEditorialMotion(location.pathname);
   const pageName = location.pathname === "/"
     ? "Beranda"
     : location.pathname.startsWith("/topik/")
@@ -43,7 +45,8 @@ export function Layout() {
 
   useEffect(() => {
     closeNavigation();
-    document.title = `${pageName} | E-Portfolio Computational Thinking`;
+    document.title = `${pageName} | Aldona — Portofolio CT`;
+    window.scrollTo({ top: 0, behavior: "instant" });
   }, [location.pathname, pageName]);
 
   useEffect(() => {
@@ -72,9 +75,10 @@ export function Layout() {
       <p className="sr-only" aria-live="polite" aria-atomic="true">{pageName}</p>
 
       <header className={`site-header${isScrolled ? " is-scrolled" : ""}`}>
+        <span className="reading-progress" aria-hidden="true" />
         <div className="site-container nav-shell">
           <Link className="brand-mark" to="/" onClick={closeNavigation}>
-            <span className="brand-mark-icon" aria-hidden="true">
+            <span className="brand-mark-icon">
               <img src={new URL("../../../assets/logo-kampus/LogoKampus.webp", import.meta.url).href} alt="Logo Universitas Nusantara PGRI Kediri" />
             </span>
             <span>
@@ -156,7 +160,9 @@ export function Layout() {
       </header>
 
       <main className="site-main" id="main-content" tabIndex={-1}>
-        <Outlet />
+        <div className="page-stage" key={location.pathname} ref={motionScope}>
+          <Outlet />
+        </div>
       </main>
 
       <footer className="site-footer">
