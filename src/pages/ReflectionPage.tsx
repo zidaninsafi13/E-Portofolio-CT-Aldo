@@ -15,7 +15,7 @@ export function ReflectionPage() {
         <FinalPageHeader
           eyebrow="Refleksi"
           title="Catatan Perjalanan"
-          description="Ruang untuk menempatkan refleksi pada dua titik penting dalam perjalanan pembelajaran."
+          description="Dua refleksi Aldona yang merekam perubahan cara pandang terhadap Computational Thinking dan proses menata ulang portofolio pembelajaran."
           quote="Berhenti sejenak membantu kita melihat arah tumbuh berikutnya."
           icon="sprout"
           iconLabel="Terus bertumbuh"

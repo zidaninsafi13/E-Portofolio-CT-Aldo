@@ -17,7 +17,7 @@ export function InfographicPage() {
         <FinalPageHeader
           eyebrow="Infografis"
           title="Visualisasi Pembelajaran"
-          description="Ruang untuk menyajikan rangkuman visual dari perjalanan belajar Computational Thinking secara ringkas dan mudah dipahami."
+          description="Rangkuman visual Aldona tentang empat fondasi Computational Thinking, perubahan pemahaman, perjalanan belajar, dan penerapannya dalam pembelajaran PJOK."
           quote="Ide yang kompleks dapat terasa lebih dekat ketika divisualkan."
           icon="lightbulb"
           iconLabel="Ide menjadi visual"
@@ -41,10 +41,6 @@ export function InfographicPage() {
             <p className="showcase-kicker">Infografis Utama</p>
             <h2>{infographic.title}</h2>
             <p>{infographic.description}</p>
-            {infographic.status === "reference" ? (
-              <p className="reference-notice"><strong>Referensi sementara.</strong> {infographic.notice}</p>
-            ) : null}
-
             <dl className="showcase-meta">
               <div>
                 <dt><Icon name="person" size={17} /> Penyusun</dt>

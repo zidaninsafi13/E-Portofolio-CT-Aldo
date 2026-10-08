@@ -4,26 +4,24 @@ export const infographic: Infographic = {
   id: "main-infographic",
   title: "Infografis Perjalanan Belajar Computational Thinking",
   description:
-    "Ringkasan visual perjalanan belajar dari fondasi Computational Thinking, problem solving, kurikulum, projek, hingga penerapannya dalam pembelajaran PJOK.",
+    "Ringkasan visual perjalanan belajar Aldona dalam memahami Computational Thinking, dari empat fondasi CT hingga penerapannya dalam problem solving, projek, kurikulum, dan pembelajaran PJOK.",
   format: "PNG",
-  url: new URL("../../tugas/Infografis/infografis.png", import.meta.url).href,
-  thumbnail: new URL("../../tugas/Infografis/infografis.png", import.meta.url).href,
+  url: new URL("../../tugas/Infografis/Infografis_Aldona.png", import.meta.url).href,
+  thumbnail: new URL("../../tugas/Infografis/Infografis_Aldona.png", import.meta.url).href,
   author: "Aldona Abdullah Ibrahim",
   year: 2026,
-  status: "reference",
-  notice: "Infografis Aldona akan diperbarui setelah materi individu dan visual final tersedia.",
+  status: "current",
 };
 
 export const finalReport: FinalReport = {
   id: "final-report",
   title: "Laporan Akhir Portofolio Computational Thinking",
   description:
-    "Laporan ini merangkum perjalanan belajar Computational Thinking dari Topik 1 sampai Topik 6, dengan fokus pada penerapan empat fondasi CT dalam materi gerak manipulatif melempar dan menangkap bola pada pembelajaran PJOK serta proses restrukturisasi portofolio.",
+    "Laporan akhir ini mendokumentasikan perubahan pemahaman Aldona tentang Computational Thinking, hubungan antartopik dan artefak, serta penerapannya dalam problem solving, projek, kurikulum, dan pembelajaran PJOK. Laporan juga menjelaskan proses restrukturisasi portofolio dan rencana tindak lanjut sebagai calon guru.",
   format: "PDF",
-  url: new URL("../../tugas/Laporan-Akhir/Laporan_Akhir_Nw.pdf", import.meta.url).href,
+  url: new URL("../../tugas/Laporan-Akhir/1_Laporan_Akhir_Aldona.pdf", import.meta.url).href,
   downloadable: true,
   author: "Aldona Abdullah Ibrahim",
   year: 2026,
-  status: "reference",
-  notice: "Laporan akhir Aldona akan ditambahkan setelah tugas individu selesai.",
+  status: "current",
 };

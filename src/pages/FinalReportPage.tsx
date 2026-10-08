@@ -18,7 +18,7 @@ export function FinalReportPage() {
         <FinalPageHeader
           eyebrow="Laporan Akhir"
           title="Dokumentasi Akhir"
-          description="Ruang untuk menempatkan laporan akhir sebagai dokumentasi utuh dari proses pembelajaran Computational Thinking."
+          description="Laporan akhir Aldona merangkum perkembangan pemahaman, hubungan antartopik, restrukturisasi artefak, dan rencana penerapan Computational Thinking dalam pembelajaran PJOK."
           quote="Proses yang tertata akan lebih mudah dibaca dan dipelajari kembali."
           icon="document"
           iconLabel="Catatan utuh"
@@ -47,10 +47,6 @@ export function FinalReportPage() {
             <p className="showcase-kicker">Dokumen Portofolio</p>
             <h2>{finalReport.title}</h2>
             <p>{finalReport.description}</p>
-            {finalReport.status === "reference" ? (
-              <p className="reference-notice"><strong>Referensi sementara.</strong> {finalReport.notice}</p>
-            ) : null}
-
             <dl className="showcase-meta">
               <div>
                 <dt><Icon name="person" size={17} /> Penyusun</dt>

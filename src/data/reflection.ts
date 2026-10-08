@@ -5,18 +5,16 @@ export const reflections: ReflectionSection[] = [
     id: "post-restrukturisasi",
     title: "Post-Restrukturisasi",
     content:
-      "Restrukturisasi portofolio menggunakan dekomposisi, pengenalan pola, abstraksi, dan algoritma untuk menyusun perjalanan belajar dari Topik 1 sampai Topik 6. Proses memilih dan mengurutkan artefak membuat hubungan antartopik lebih terlihat, sekaligus menunjukkan bahwa penyusunan portofolio sendiri merupakan penerapan Computational Thinking. Ke depan, CT akan diterapkan dalam PJOK melalui analisis gerak, data performa, tantangan permainan, dan siklus mencoba–mengevaluasi–memperbaiki.",
-    documentUrl: new URL("../../tugas/Refleksi/Post_Restrukturisasi.pdf", import.meta.url).href,
-    status: "reference",
-    notice: "Refleksi ini ditampilkan sebagai referensi sementara. Refleksi personal Aldona akan menyusul.",
+      "Dalam post-restrukturisasi, Aldona menggunakan dekomposisi untuk membagi portofolio menjadi bagian-bagian yang jelas, pengenalan pola untuk menjaga struktur penyajian tetap konsisten, abstraksi untuk memilih artefak yang paling mewakili perkembangan belajar, dan algoritma untuk menyusun alur dari konsep dasar hingga produk penutup. Proses ini menunjukkan bahwa menyusun portofolio sendiri merupakan penerapan Computational Thinking.",
+    documentUrl: new URL("../../tugas/Refleksi/2_Post_Restrukturisasi_Aldona.pdf", import.meta.url).href,
+    status: "current",
   },
   {
     id: "refleksi-akhir",
     title: "Refleksi Akhir",
     content:
-      "Pembelajaran Computational Thinking mengubah cara pandang saya: CT bukan hanya tentang komputer, tetapi cara berpikir logis dan sistematis yang dekat dengan problem solving, projek, kurikulum, dan PJOK. Dalam pembelajaran gerak, peserta didik dapat memecah keterampilan, menemukan pola keberhasilan, memilih unsur penting, lalu menguji dan memperbaiki strateginya. Rencana tindak lanjutnya adalah menghadirkan tantangan gerak, analisis data kebugaran, strategi permainan, dan refleksi proses belajar.",
-    documentUrl: new URL("../../tugas/Refleksi/Refleksi_Akhir_Nw.pdf", import.meta.url).href,
-    status: "reference",
-    notice: "Refleksi ini ditampilkan sebagai referensi sementara. Refleksi personal Aldona akan menyusul.",
+      "Pembelajaran Computational Thinking mengubah cara pandang Aldona dari CT sebagai sesuatu yang identik dengan komputer menjadi keterampilan hidup untuk menganalisis akar masalah dan mengambil keputusan secara sistematis. Pengalaman bermakna muncul saat memahami istilah teknis pada CP CT serta ketika menganalisis gerak melempar dan menangkap bola bersama kelompok. Tindak lanjutnya adalah merancang tantangan gerak, menggunakan data sederhana untuk mengambil keputusan latihan, dan menilai proses berpikir peserta didik, bukan hanya hasil geraknya.",
+    documentUrl: new URL("../../tugas/Refleksi/3_Refleksi_Akhir_Aldona.pdf", import.meta.url).href,
+    status: "current",
   },
 ];
