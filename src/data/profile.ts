@@ -2,7 +2,7 @@ import type { PortfolioProfile } from "../types/portfolio";
 
 export const profile: PortfolioProfile = {
   name: "Aldona Abdullah Ibrahim",
-  nim: "2625030076",
+  nim: "2625030020",
   program: "PPG",
   status: "Mahasiswa PPG",
   field: "PJOK / Olahraga",
